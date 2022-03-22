@@ -51,10 +51,24 @@ body {
     display: inline-block;
 }
 
+.nav-elements:hover {
+    color: purple;
+    font-weight: 400;
+    text-shadow: 0 0 2px red;
+
+    cursor: pointer;
+}
+
 .nav-elements a:hover {
     color: purple;
     font-weight: 400;
     text-shadow: 0 0 2px red;
+}
+
+.nav-elements {
+    text-decoration: none;
+    text-shadow: 0 0 2px black;
+    color: blue;
 }
 
 .nav-elements a {

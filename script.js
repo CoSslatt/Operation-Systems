@@ -1,3 +1,4 @@
+// images and content texts
 const windowsImage = document.querySelector('.content-image-windows');
 const windowsText = document.querySelector('.content-text-windows');
 
@@ -6,6 +7,11 @@ const linuxText = document.querySelector('.content-text-linux');
 
 const macosImage = document.querySelector('.content-image-macos');
 const macosText = document.querySelector('.content-text-macos');
+
+// texts in navigation bar
+const navWindows = document.getElementById('nav-element-windows');
+const navLinux = document.getElementById('nav-element-linux');
+const navMacos = document.getElementById('nav-element-macos');
 
 var posY = 0;
 
@@ -19,6 +25,17 @@ window.addEventListener('scroll', (e) => {
     windowsOS.onScroll();
     linuxOS.onScroll();
     macOS.onScroll();
+});
+
+// navigation elements
+navWindows.addEventListener('click', (e) => {
+    window.scrollTo(0, 0);
+});
+navLinux.addEventListener('click', (e) => {
+    window.scrollTo(0, 720);
+});
+navMacos.addEventListener('click', (e) => {
+    window.scrollTo(0, 1200);
 });
 
 // Testing section ---------------------------------------------------------------------------
