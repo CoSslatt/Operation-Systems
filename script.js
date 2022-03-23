@@ -13,6 +13,8 @@ const navWindows = document.getElementById('nav-element-windows');
 const navLinux = document.getElementById('nav-element-linux');
 const navMacos = document.getElementById('nav-element-macos');
 
+const navBar = document.querySelector('.nav');
+
 var posY = 0;
 
 window.addEventListener('load', (e) => {
@@ -22,23 +24,20 @@ window.addEventListener('load', (e) => {
 window.addEventListener('scroll', (e) => {
     posY = window.scrollY;
 
+    stickyNavBar();
     windowsOS.onScroll();
     linuxOS.onScroll();
     macOS.onScroll();
 });
 
-// navigation elements
-navWindows.addEventListener('click', (e) => {
-    window.scrollTo(0, 0);
-});
-navLinux.addEventListener('click', (e) => {
-    window.scrollTo(0, 720);
-});
-navMacos.addEventListener('click', (e) => {
-    window.scrollTo(0, 1200);
-});
-
-// Testing section ---------------------------------------------------------------------------
+function stickyNavBar(){
+    if (posY >= 169){
+        navBar.classList.add('sticky');
+    }
+    else {
+        navBar.classList.remove('sticky');
+    }
+};
 
 var windowsOS = {
     title: "Windows",
@@ -103,4 +102,13 @@ var macOS = {
     }
 };
 
-//task
+// navigation elements
+navWindows.addEventListener('click', (e) => {
+    window.scrollTo(0, 0);
+});
+navLinux.addEventListener('click', (e) => {
+    window.scrollTo(0, 720);
+});
+navMacos.addEventListener('click', (e) => {
+    window.scrollTo(0, 1200);
+});
